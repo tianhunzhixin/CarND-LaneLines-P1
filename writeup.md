@@ -27,7 +27,7 @@ In this function I assumption that the points in the left side of image belong t
 * if the x value of piont is smaller than the defined value, we think the point is in left line;
 * otherwise we don't use the piont.
 
-Importantly, I calculate the ratio of detected line and assupmtion the ratio in a reasonable range (here 45º +- 20º).
+Importantly, I calculate the ratio of detected line and assupmtion the ratio of different side in a reasonable range (here ratio in left line is between -inf ~ 0 and ratio in right line is between 0 ~ +inf).
 
 At last, we draw the left line and right line with the minimum value. So I get the output image below:
 
@@ -40,7 +40,8 @@ Finally, I get the output image as below:
 ![alt text][result_image]
 
 
-### Reflection
+
+## Reflection
 
 ###1. draw_lines() method
 
@@ -58,13 +59,11 @@ My draw_lines() function handle the lines as below:
 ###2. Potential shortcomings
 
 
-One potential shortcoming would be what would happen when ... 
+One potential shortcoming would be that it can't handle the lane line of bend. I assume that the lane line in mask region will be straight, So it will be incorrect in bend.
 
-Another shortcoming could be ...
+Another shortcoming could be that the draw line function is not perfect. There are a lot of assumptions in function.
 
 
 ###3. Possible improvements
 
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+I think the biggest improvement is that changing the draw line function. Maybe we can draw lines instead of a single line. If we do it, the function will can handle the lane lines of bend.
