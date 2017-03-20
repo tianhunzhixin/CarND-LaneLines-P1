@@ -39,6 +39,11 @@ Finally, I get the output image as below:
 [result_image]: ./test_images_output/solidWhiteRight_Out.jpg "RegionIamge"
 ![alt text][result_image]
 
+### Challenge
+When I apply my method in challenge video, I find it can not work well. But I find the method cv2.LUT() can smooth the image and makes the result is more reasonable on the Internet. So I add adjust_gamma() method before appling a lot of algorithms.
+
+It seems look good when handle the challenge video.
+
 
 
 ## Reflection
